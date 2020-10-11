@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+	--pale-blue: hsl(243, 100%, 93%);
+	--grey-blue: hsl(229, 7%, 55%);
+	--dark-blue: hsl(228, 56%, 26%);
+	--vdark-blue: hsl(229, 57%, 11%);
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: var(--vdark-blue);
+	min-height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.bg-img {
+	background: url('./imgs/bg-desktop.png');
+	width: 100vw;
+	height: 50vh;
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+}
+
+.component-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	min-width: 575px;
+	height: auto;
+	color: #fff;
+}
+
+.component-controller {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	background: var(--dark-blue);
+	width: 320px;
+	height: 180px;
+	border-radius: 10px 100px 10px 10px;
+	padding: 20px;
+}
+
+.component-controller .logo {
+	display: flex;
+}
+.component-controller .logo i {
+	font-size: 2em;
+}
+
+.component-controller .logo p {
+	font-size: 1.7em;
+	margin-left: 10px;
+}
+
+span.bold {
+	font-weight: 800;
+}
+
+.component-controller .controller-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.component-controller .controller-wrapper .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--vdark-blue);
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+	margin: 40px 10px 0 0;
+	transition: all 0.2s ease;
+}
+
+.component-controller .controller-wrapper .button:hover {
+	cursor: pointer;
+	background: var(--pale-blue);
+}
+
+.data-consumption {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: var(--dark-blue);
+	width: 500px;
+	height: 140px;
+	border-radius: 10px;
+	position: relative;
+	bottom: -20px;
+	margin-left: 25px;
+}
+
+.data-consumption .data-remaining {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	color: var(--dark-blue);
+	width: 100px;
+	height: 50px;
+	border-radius: 10px;
+	position: absolute;
+	top: -25px;
+	right: 50px;
+}
+
+.data-consumption .data-remaining p {
+	font-size: 0.7em;
+}
+
+.data-consumption .data-meter {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background: var(--vdark-blue);
+	height: 20px;
+	width: 400px;
+	border-radius: 10px;
+	margin: 10px 0 5px 0;
+}
+.data-consumption .data-meter .data-meter-bar {
+	background: var(--gradient);
+	padding: 0;
+	margin: 0;
+	height: 14px;
+	width: 5px;
+	border-radius: 10px;
+	transform: translateX(4px);
+	animation: 3s forwards slideIn;
+}
+
+@keyframes slideIn {
+	100% {
+		width: 300px;
+	}
+}
+
+.data-consumption .data-range {
+	display: flex;
+	justify-content: space-between;
+	width: 400px;
+	font-size: 0.7em;
+}
+
+@media screen and (max-width: 800px) {
+	.bg-img {
+		background: url('./imgs/bg-mobile.png') no-repeat center center fixed;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.component-container {
+		flex-direction: column;
+		min-width: 320px;
+	}
+
+	.data-consumption {
+		width: 320px;
+		margin: 0;
+	}
+
+	.data-consumption .data-meter {
+		width: 300px;
+	}
+
+	.data-consumption .data-range {
+		width: 300px;
+	}
+	@keyframes slideIn {
+		100% {
+			width: 230px;
+		}
+	}
+
+	.data-consumption .data-remaining {
+		top: 115px;
+		left: 110px;
+	}
+}

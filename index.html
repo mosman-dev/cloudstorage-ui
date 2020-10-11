@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Data Storage Component</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+			integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<!-- Backdrop -->
+		<div class="bg-img"></div>
+
+		<!-- Component -->
+		<div class="component-container">
+			<!-- Controller -->
+			<div class="component-controller">
+				<div class="logo">
+					<i class="fas fa-server"></i>
+					<p><span class="bold">Cloud</span>Storage</p>
+				</div>
+
+				<div class="controller-wrapper">
+					<div class="button document">
+						<img src="./imgs/icon-document.svg" alt="Document" />
+					</div>
+					<div class="button folder">
+						<img src="./imgs/icon-folder.svg" alt="File" />
+					</div>
+					<div class="button cloud">
+						<img src="./imgs/icon-upload.svg" alt="Cloud" />
+					</div>
+				</div>
+			</div>
+
+			<!-- Data Consumption -->
+			<div class="data-consumption">
+				<div class="data-remaining">
+					<span class="bold">99 GB</span>
+					<p>remaining</p>
+				</div>
+				<p>You've used <span class="bold">401 GB</span> of your storage</p>
+				<div class="data-meter">
+					<div class="data-meter-bar"></div>
+				</div>
+				<div class="data-range">
+					<p>0 GB</p>
+					<p>500 GB</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="./main.js"></script>
+	</body>
+</html>
